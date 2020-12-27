@@ -14,7 +14,8 @@ export function bubbleSort<T>(arr: T[], compareFn: (a: T, b: T) => number = comp
       const compareReault = compareFn(a, b);
 
       if (compareReault < 0) {
-        result.splice(j - 1, 2, a, b);
+        result[j] = b;
+        result[j - 1] = a;
       }
     }
   }
