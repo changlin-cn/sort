@@ -10,6 +10,7 @@ export function quickSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compa
   const compared = arr[0];
   const left = [];
   const right = [];
+
   for (let i = 1; i < arr.length; i++) {
     const compareReault = compareFn(arr[i], compared);
     if (compareReault < 0) {
@@ -18,5 +19,8 @@ export function quickSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compa
       right.push(arr[i]);
     }
   }
-  return quickSort(left, compareFn).concat(compared, quickSort(right, compareFn));
+  const leftSorted = left.length > 1 ? quickSort(left, compareFn) : left;
+  const rightSorted = right.length > 1 ? quickSort(right, compareFn) : right;
+
+  return leftSorted.concat(compared, rightSorted);
 }
