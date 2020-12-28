@@ -1,9 +1,9 @@
 import { RESULT_ASC, RESULT_DESC, RESULT_STRING_ASC, RESULT_STRING_DESC } from './data/result';
 import { SOURCE, SOURCE_STRING } from './data/source';
 
-import { bubbleSort } from '../src/index';
+import { bubbleSort, insertionSort } from '../src/index';
 
-[bubbleSort].forEach((fn) => {
+[bubbleSort, insertionSort].forEach((fn) => {
   // number
   test(`${fn.name} asc 1;number[]`, () => {
     expect(fn(SOURCE)).toEqual(RESULT_ASC);
