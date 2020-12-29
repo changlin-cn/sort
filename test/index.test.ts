@@ -11,30 +11,32 @@ import {
   mergeSortFromTop,
 } from '../src/index';
 
-[bubbleSort, insertionSort, selectionSort, quickSort, shellSort, mergeSortFromTop].forEach((fn) => {
-  // number
-  test(`${fn.name} asc 1;number[]`, () => {
-    expect(fn(SOURCE)).toEqual(RESULT_ASC);
-  });
+[bubbleSort, insertionSort, selectionSort, quickSort, shellSort, mergeSortFromTop, mergeSortFromBottom].forEach(
+  (fn) => {
+    // number
+    test(`${fn.name} asc 1;number[]`, () => {
+      expect(fn(SOURCE)).toEqual(RESULT_ASC);
+    });
 
-  test(`${fn.name} asc 2;number[]`, () => {
-    expect(fn(SOURCE, (a, b) => a - b)).toEqual(RESULT_ASC);
-  });
+    test(`${fn.name} asc 2;number[]`, () => {
+      expect(fn(SOURCE, (a, b) => a - b)).toEqual(RESULT_ASC);
+    });
 
-  test(`${fn.name} desc;number[]`, () => {
-    expect(fn(SOURCE, (a, b) => b - a)).toEqual(RESULT_DESC);
-  });
+    test(`${fn.name} desc;number[]`, () => {
+      expect(fn(SOURCE, (a, b) => b - a)).toEqual(RESULT_DESC);
+    });
 
-  // string
-  test(`${fn.name} asc 1;string[]`, () => {
-    expect(fn(SOURCE_STRING)).toEqual(RESULT_STRING_ASC);
-  });
+    // string
+    test(`${fn.name} asc 1;string[]`, () => {
+      expect(fn(SOURCE_STRING)).toEqual(RESULT_STRING_ASC);
+    });
 
-  test(`${fn.name} asc 2;string[]`, () => {
-    expect(fn(SOURCE_STRING, (a, b) => (a > b ? 0 : -1))).toEqual(RESULT_STRING_ASC);
-  });
+    test(`${fn.name} asc 2;string[]`, () => {
+      expect(fn(SOURCE_STRING, (a, b) => (a > b ? 0 : -1))).toEqual(RESULT_STRING_ASC);
+    });
 
-  test(`${fn.name} desc;string[]`, () => {
-    expect(fn(SOURCE_STRING, (a, b) => (a < b ? 0 : -1))).toEqual(RESULT_STRING_DESC);
-  });
-});
+    test(`${fn.name} desc;string[]`, () => {
+      expect(fn(SOURCE_STRING, (a, b) => (a < b ? 0 : -1))).toEqual(RESULT_STRING_DESC);
+    });
+  },
+);

@@ -1,5 +1,9 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
-
+/**
+ * 自顶而下的归并排序 （递归实现）
+ * @param arr
+ * @param compareFn
+ */
 export function mergeSortFromTop<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
 
@@ -32,7 +36,33 @@ function mergeArray<T>(arrLeft: T[], arrRgiht: T[], compareFn: compareFnDefalutT
 
   return res;
 }
+/**
+ * 自底而上的归并排序 （非递归实现）
+ * @param arr
+ * @param compareFn
+ */
+export function mergeSortFromBottom<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
+  const length = arr.length;
 
-export function mergeSortFromBottom(): void {
-  //
+  if (length < 2) {
+    return arr.slice();
+  }
+
+  let res = arr.map((n) => [n]);
+  while (res.length > 1) {
+    console.log(res);
+    const resNew = [];
+    for (let i = 0; i < res.length; i += 2) {
+      if (i + 1 === res.length) {
+        resNew.push(res[i]);
+        break;
+      }
+      resNew.push(mergeArray(res[i], res[i + 1], compareFn));
+    }
+
+    res = resNew;
+  }
+  console.log(res);
+
+  return res[0];
 }
