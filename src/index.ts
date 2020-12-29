@@ -3,3 +3,4 @@ export { insertionSort } from './insertion-sort';
 export { selectionSort } from './selection-sort';
 export { quickSort } from './quick-sort';
 export { shellSort } from './shell-sort';
+export { mergeSortFromBottom, mergeSortFromTop } from './merge-sort';

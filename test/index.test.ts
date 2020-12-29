@@ -1,9 +1,17 @@
 import { RESULT_ASC, RESULT_DESC, RESULT_STRING_ASC, RESULT_STRING_DESC } from './data/result';
 import { SOURCE, SOURCE_STRING } from './data/source';
 
-import { bubbleSort, insertionSort, selectionSort, quickSort, shellSort } from '../src/index';
+import {
+  bubbleSort,
+  insertionSort,
+  selectionSort,
+  quickSort,
+  shellSort,
+  mergeSortFromBottom,
+  mergeSortFromTop,
+} from '../src/index';
 
-[bubbleSort, insertionSort, selectionSort, quickSort, shellSort].forEach((fn) => {
+[bubbleSort, insertionSort, selectionSort, quickSort, shellSort, mergeSortFromTop].forEach((fn) => {
   // number
   test(`${fn.name} asc 1;number[]`, () => {
     expect(fn(SOURCE)).toEqual(RESULT_ASC);
