@@ -1,4 +1,4 @@
-import { compareFnDefalut } from './compare-fn-defalut';
+import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 
 function createGaps(length: number): number[] {
   const gaps = [1];
@@ -9,7 +9,7 @@ function createGaps(length: number): number[] {
   return gaps;
 }
 
-export function shellSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compareFnDefalut): T[] {
+export function shellSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();
   if (length < 2) {

@@ -1,8 +1,8 @@
-import { compareFnDefalut } from './compare-fn-defalut';
+import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 /**
  * 插入排序
  */
-export function insertionSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compareFnDefalut): T[] {
+export function insertionSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();
   if (length < 2) {

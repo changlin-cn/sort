@@ -1,6 +1,6 @@
-import { compareFnDefalut } from './compare-fn-defalut';
+import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 
-export function selectionSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compareFnDefalut): T[] {
+export function selectionSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();
   if (length < 2) {

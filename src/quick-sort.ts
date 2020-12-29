@@ -1,6 +1,6 @@
-import { compareFnDefalut } from './compare-fn-defalut';
+import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 
-export function quickSort<T>(arr: T[], compareFn: (a: T, b: T) => number = compareFnDefalut): T[] {
+export function quickSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
 
   if (length < 2) {
