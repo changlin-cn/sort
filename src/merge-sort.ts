@@ -50,7 +50,6 @@ export function mergeSortFromBottom<T>(arr: T[], compareFn: compareFnDefalutType
 
   let res = arr.map((n) => [n]);
   while (res.length > 1) {
-    console.log(res);
     const resNew = [];
     for (let i = 0; i < res.length; i += 2) {
       if (i + 1 === res.length) {
