@@ -1,6 +1,8 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 /**
  * 插入排序
+ * @param arr
+ * @param compareFn
  */
 export function insertionSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;

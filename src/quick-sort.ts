@@ -1,5 +1,9 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
-
+/**
+ * 快速排序
+ * @param arr
+ * @param compareFn
+ */
 export function quickSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
 

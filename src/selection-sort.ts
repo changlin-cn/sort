@@ -1,5 +1,9 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
-
+/**
+ * 选择排序
+ * @param arr
+ * @param compareFn
+ */
 export function selectionSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();

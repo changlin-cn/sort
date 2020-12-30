@@ -1,5 +1,9 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
-
+/**
+ * 冒泡排序
+ * @param arr
+ * @param compareFn
+ */
 export function bubbleSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();

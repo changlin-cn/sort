@@ -8,7 +8,11 @@ function createGaps(length: number): number[] {
   }
   return gaps;
 }
-
+/**
+ * 希尔排序
+ * @param arr
+ * @param compareFn
+ */
 export function shellSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();

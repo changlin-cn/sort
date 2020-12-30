@@ -1,5 +1,10 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
 import { swap } from './swap';
+/**
+ * 堆排序
+ * @param arr
+ * @param compareFn
+ */
 export function heapSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();
