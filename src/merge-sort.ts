@@ -62,7 +62,6 @@ export function mergeSortFromBottom<T>(arr: T[], compareFn: compareFnDefalutType
 
     res = resNew;
   }
-  console.log(res);
 
   return res[0];
 }
