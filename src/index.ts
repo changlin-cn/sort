@@ -5,3 +5,4 @@ export { quickSort } from './quick-sort';
 export { shellSort } from './shell-sort';
 export { mergeSortFromBottom, mergeSortFromTop } from './merge-sort';
 export { heapSort } from './heap-sort';
+export { swap } from './swap';

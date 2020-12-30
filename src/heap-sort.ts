@@ -1,5 +1,5 @@
 import { compareFnDefalut, compareFnDefalutType } from './compare-fn-defalut';
-
+import { swap } from './swap';
 export function heapSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compareFnDefalut): T[] {
   const length = arr.length;
   const result = arr.slice();
@@ -10,9 +10,7 @@ export function heapSort<T>(arr: T[], compareFn: compareFnDefalutType<T> = compa
   buildHeap(result, compareFn);
 
   for (let i = result.length - 1; i > 0; i--) {
-    const temp = result[i];
-    result[i] = result[0];
-    result[0] = temp;
+    swap(result, 0, i);
     ajustHeap(result, 0, compareFn, i);
   }
 
@@ -39,9 +37,7 @@ function ajustHeap<T>(arr: T[], index: number, compareFn: compareFnDefalutType<T
   }
 
   if (maxIndex !== index) {
-    const temp = arr[maxIndex];
-    arr[maxIndex] = arr[index];
-    arr[index] = temp;
+    swap(arr, index, maxIndex);
     ajustHeap(arr, maxIndex, compareFn, ajustLength);
   }
 }
