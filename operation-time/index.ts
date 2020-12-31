@@ -36,5 +36,5 @@ import {
     console.timeEnd(fn.name);
   });
 
-  console.log(`${len} end -------------`);
+  console.log(`${len} end -------------\n`);
 });
