@@ -48,3 +48,34 @@ import {
     expect(fn(SOURCE_STRING, (a, b) => (a < b ? 0 : -1))).toEqual(RESULT_STRING_DESC);
   });
 });
+
+[
+  bubbleSort,
+  insertionSort,
+  selectionSort,
+  quickSort,
+  shellSort,
+  mergeSortFromTop,
+  mergeSortFromBottom,
+  heapSort,
+].forEach((fn) => {
+  const dataRandom: number[] = [];
+  while (dataRandom.length < 101) {
+    dataRandom.push(parseInt(`${(Math.random() * 1000).toFixed(0)}`));
+  }
+  const dataRandomAsc = dataRandom.slice(0).sort((a, b) => a - b);
+  const dataRandomDesc = dataRandomAsc.slice().reverse();
+
+  // int
+  test(`${fn.name} asc 1;int[]`, () => {
+    expect(fn(dataRandom)).toEqual(dataRandomAsc);
+  });
+
+  test(`${fn.name} asc 2;int[]`, () => {
+    expect(fn(dataRandom, (a, b) => a - b)).toEqual(dataRandomAsc);
+  });
+
+  test(`${fn.name} desc;int[]`, () => {
+    expect(fn(dataRandom, (a, b) => b - a)).toEqual(dataRandomDesc);
+  });
+});
