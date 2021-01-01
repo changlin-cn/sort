@@ -7,6 +7,7 @@ import {
   mergeSortFromBottom,
   mergeSortFromTop,
   heapSort,
+  countingSort,
 } from '../src/index';
 
 [20, 200, 2000, 20000, 100000, 100000, 100000].forEach((len) => {
@@ -30,6 +31,7 @@ import {
     mergeSortFromBottom,
     mergeSortFromTop,
     heapSort,
+    countingSort,
   ].forEach((fn) => {
     console.time(fn.name);
     fn(dataRandom);
