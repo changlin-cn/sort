@@ -10,6 +10,7 @@ import {
   mergeSortFromBottom,
   mergeSortFromTop,
   heapSort,
+  countingSort,
 } from '../src/index';
 
 [
@@ -77,5 +78,22 @@ import {
 
   test(`${fn.name} desc;int[]`, () => {
     expect(fn(dataRandom, (a, b) => b - a)).toEqual(dataRandomDesc);
+  });
+});
+
+[countingSort].forEach((fn) => {
+  const dataRandom: number[] = [];
+  while (dataRandom.length < 101) {
+    dataRandom.push(parseInt(`${(Math.random() * 1000).toFixed(0)}`));
+  }
+  const dataRandomAsc = dataRandom.slice(0).sort((a, b) => a - b);
+  const dataRandomDesc = dataRandomAsc.slice().reverse();
+
+  // int
+  test(`${fn.name} asc;int[]`, () => {
+    expect(fn(dataRandom)).toEqual(dataRandomAsc);
+  });
+  test(`${fn.name} desc;int[]`, () => {
+    expect(fn(dataRandom, (n) => n, 'desc')).toEqual(dataRandomDesc);
   });
 });
