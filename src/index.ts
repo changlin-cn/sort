@@ -7,3 +7,4 @@ export { mergeSortFromBottom, mergeSortFromTop } from './merge-sort';
 export { heapSort } from './heap-sort';
 export { swap } from './swap';
 export { countingSort } from './counting-sort';
+export { radixSort } from './radix-sort';

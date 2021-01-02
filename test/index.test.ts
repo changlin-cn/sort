@@ -11,6 +11,7 @@ import {
   mergeSortFromTop,
   heapSort,
   countingSort,
+  radixSort,
 } from '../src/index';
 
 [
@@ -81,7 +82,7 @@ import {
   });
 });
 
-[countingSort].forEach((fn) => {
+[countingSort, radixSort].forEach((fn) => {
   const dataRandom: number[] = [];
   while (dataRandom.length < 101) {
     dataRandom.push(parseInt(`${(Math.random() * 1000).toFixed(0)}`));
