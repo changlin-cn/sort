@@ -8,6 +8,7 @@ const getIntDefault: getInt<unknown> = (item) => item as number;
  * 基数排序 (给定数组排序值必须是大于或等于0的整数)
  * @param arr
  * @param getInt
+ * @param order
  */
 export function radixSort<T>(arr: T[], getInt: getInt<T> = getIntDefault, order: 'asc' | 'desc' = 'asc'): T[] {
   if (arr.length < 2) {
